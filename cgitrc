@@ -1,0 +1,8 @@
+remove-suffix=1
+enable-index-owner=0
+root-desc=source code and version control for Arjun Satarkar's projects
+favicon=https://www.arjunsatarkar.net/static/media/favicon.ico
+header=/header.html
+robots=index, follow
+source-filter=/usr/local/lib/cgit/filters/syntax-highlighting.py
+scan-path=/srv/git
