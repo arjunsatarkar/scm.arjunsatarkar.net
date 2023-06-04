@@ -26,6 +26,7 @@ elif filename.endswith(".md"):
             "gfm",
             "-t",
             "html",
+            "--sandbox",
             "-",
         ]
     ).decode("utf-8")
