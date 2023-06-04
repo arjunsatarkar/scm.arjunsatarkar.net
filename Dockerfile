@@ -12,7 +12,7 @@ RUN make install
 
 FROM nginx:1-bullseye
 
-RUN apt-get update && apt-get install -y asciidoctor fcgiwrap git libssl-dev pandoc python3 python3-pygments zlib1g-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y asciidoctor fcgiwrap libssl-dev pandoc python3 python3-pygments zlib1g-dev && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /var/www/htdocs/cgit /var/www/htdocs/cgit
 COPY --from=builder /usr/local/lib/cgit /usr/local/lib/cgit
