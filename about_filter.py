@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import html
 import subprocess
 import sys
 
@@ -31,6 +32,6 @@ elif filename.endswith(".md"):
         ]
     ).decode("utf-8")
 else:
-    result = sys.stdin.read()
+    result = f"<pre>{html.escape(sys.stdin.read())}</pre>"
 
 print(result)
