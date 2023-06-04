@@ -1,4 +1,4 @@
-FROM debian:bullseye as builder
+FROM debian:bullseye-slim as builder
 
 RUN apt-get update && apt-get install -y gcc git libssl-dev make wget zlib1g-dev && rm -rf /var/lib/apt/lists/*
 
