@@ -11,4 +11,5 @@ remove-suffix=1
 robots=index, follow
 root-desc=source code and version control for Arjun Satarkar's projects
 source-filter=/usr/local/lib/cgit/filters/syntax-highlighting.py
+snapshots=tar tar.gz zip
 scan-path=/srv/git
