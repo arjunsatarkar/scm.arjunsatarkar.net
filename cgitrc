@@ -1,4 +1,5 @@
 about-filter=/about_filter.py
+enable-git-config=1
 enable-index-owner=0
 favicon=https://www.arjunsatarkar.net/static/media/favicon.ico
 header=/header.html
