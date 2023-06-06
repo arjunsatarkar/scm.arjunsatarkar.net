@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim as builder
 
-RUN apt-get update && apt-get install -y gcc git libssl-dev make wget zlib1g-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates gcc git libssl-dev make wget zlib1g-dev && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://git.zx2c4.com/cgit
 WORKDIR /cgit
@@ -15,7 +15,7 @@ RUN tar xvzf pandoc.tar.gz --strip-components 1 -C /usr/local
 
 FROM nginx:1-bullseye
 
-RUN apt-get update && apt-get install -y asciidoctor fcgiwrap libssl-dev python3 python3-pygments zlib1g-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends asciidoctor fcgiwrap libssl-dev python3 python3-pygments zlib1g-dev && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /var/www/htdocs/cgit /var/www/htdocs/cgit
 COPY --from=builder /usr/local/lib/cgit /usr/local/lib/cgit
