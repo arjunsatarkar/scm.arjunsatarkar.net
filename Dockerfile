@@ -10,7 +10,7 @@ RUN git submodule update
 RUN make
 RUN make install
 
-RUN wget -O pandoc.tar.gz https://github.com/jgm/pandoc/releases/download/3.1.2/pandoc-3.1.2-linux-amd64.tar.gz
+RUN wget -O pandoc.tar.gz https://github.com/jgm/pandoc/releases/download/3.1.3/pandoc-3.1.3-linux-amd64.tar.gz
 RUN tar xvzf pandoc.tar.gz --strip-components 1 -C /usr/local
 
 FROM nginx:1-bullseye
