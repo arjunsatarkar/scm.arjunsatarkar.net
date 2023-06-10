@@ -23,7 +23,7 @@ COPY --from=builder /usr/local/bin/pandoc /usr/local/bin/pandoc
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cgitrc /etc/cgitrc
-COPY header.html /header.html
+COPY logo.svg /var/www/htdocs/cgit/logo.svg
 COPY about_filter.py /about_filter.py
 COPY entrypoint.sh /entrypoint.sh
 

@@ -1,9 +1,11 @@
 about-filter=/about_filter.py
+cache-size=0
 enable-git-config=1
 enable-index-owner=0
 favicon=https://www.arjunsatarkar.net/static/media/favicon.ico
-header=/header.html
 local-time=1
+logo=/logo.svg
+logo-link=https://www.arjunsatarkar.net/
 readme=:README
 readme=:README.adoc
 readme=:README.md
