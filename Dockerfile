@@ -2,9 +2,8 @@ FROM debian:bullseye-slim as builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates gcc git libssl-dev make wget zlib1g-dev && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://git.zx2c4.com/cgit
+RUN git clone https://github.com/arjunsatarkar/cgit.git
 WORKDIR /cgit
-RUN git checkout 00ecfaadea2c40cc62b7a43e246384329e6ddb98
 RUN git submodule init
 RUN git submodule update
 RUN make
@@ -23,6 +22,7 @@ COPY --from=builder /usr/local/bin/pandoc /usr/local/bin/pandoc
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cgitrc /etc/cgitrc
+COPY head.html /head.html
 COPY logo.svg /var/www/htdocs/cgit/logo.svg
 COPY about_filter.py /about_filter.py
 COPY entrypoint.sh /entrypoint.sh
