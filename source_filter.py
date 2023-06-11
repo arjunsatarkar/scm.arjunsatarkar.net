@@ -18,5 +18,6 @@ except ClassNotFound:
 
 formatter = HtmlFormatter(style='monokai', nobackground=True)
 
-print(f"<style>{formatter.get_style_defs('.highlight')}</style>")
-print(highlight(source, lexer, formatter))
+sys.stdout.write(f"<style>{formatter.get_style_defs('.highlight')}</style>")
+sys.stdout.write(highlight(source, lexer, formatter))
+print()
