@@ -20,12 +20,19 @@ COPY --from=builder /var/www/htdocs/cgit /var/www/htdocs/cgit
 COPY --from=builder /usr/local/lib/cgit /usr/local/lib/cgit
 COPY --from=builder /usr/local/bin/pandoc /usr/local/bin/pandoc
 
+RUN mkdir -p /var/www/htdocs/cgit/_static
+RUN mv /var/www/htdocs/cgit/cgit.css /var/www/htdocs/cgit/_static/
+RUN mv /var/www/htdocs/cgit/cgit.js /var/www/htdocs/cgit/_static/
+RUN rm /var/www/htdocs/cgit/cgit.png
+
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cgitrc /etc/cgitrc
-COPY head.html /head.html
-COPY logo.svg /var/www/htdocs/cgit/logo.svg
 COPY about_filter.py /about_filter.py
 COPY source_filter.py /source_filter.py
+COPY head.html /head.html
+COPY logo.svg /var/www/htdocs/cgit/_static/logo.svg
+COPY custom.css /var/www/htdocs/cgit/_static/custom.css
+COPY Source_Code_Pro /var/www/htdocs/cgit/_static/Source_Code_Pro
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT /entrypoint.sh

@@ -1,11 +1,14 @@
 about-filter=/about_filter.py
 cache-size=0
+css=/_static/custom.css
+css=/_static/cgit.css
 enable-git-config=1
 enable-index-owner=0
 favicon=https://www.arjunsatarkar.net/static/media/favicon.ico
 head-include=/head.html
+js=/_static/cgit.js
 local-time=1
-logo=/logo.svg
+logo=/_static/logo.svg
 logo-link=https://www.arjunsatarkar.net/
 readme=:README
 readme=:README.adoc
