@@ -25,6 +25,7 @@ COPY cgitrc /etc/cgitrc
 COPY head.html /head.html
 COPY logo.svg /var/www/htdocs/cgit/logo.svg
 COPY about_filter.py /about_filter.py
+COPY source_filter.py /source_filter.py
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT /entrypoint.sh
