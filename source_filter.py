@@ -9,14 +9,14 @@ import sys
 source = sys.stdin.read()
 
 try:
-	lexer = guess_lexer_for_filename(sys.argv[1], source)
+    lexer = guess_lexer_for_filename(sys.argv[1], source)
 except ClassNotFound:
-	try:
-		lexer = guess_lexer(source)
-	except ClassNotFound:
-		lexer = TextLexer()
+    try:
+        lexer = guess_lexer(source)
+    except ClassNotFound:
+        lexer = TextLexer()
 
-formatter = HtmlFormatter(style='monokai', nobackground=True)
+formatter = HtmlFormatter(style="monokai", nobackground=True)
 
 sys.stdout.write(f"<style>{formatter.get_style_defs('.highlight')}</style>")
 sys.stdout.write(highlight(source, lexer, formatter))
