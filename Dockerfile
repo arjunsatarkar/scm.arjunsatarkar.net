@@ -9,6 +9,11 @@ RUN git submodule update
 RUN make
 RUN make install
 
+RUN mkdir -p /var/www/htdocs/cgit/_static
+RUN mv /var/www/htdocs/cgit/cgit.css /var/www/htdocs/cgit/_static/
+RUN mv /var/www/htdocs/cgit/cgit.js /var/www/htdocs/cgit/_static/
+RUN rm /var/www/htdocs/cgit/cgit.png /var/www/htdocs/cgit/favicon.ico
+
 RUN wget -O pandoc.tar.gz https://github.com/jgm/pandoc/releases/download/3.1.3/pandoc-3.1.3-linux-amd64.tar.gz
 RUN tar xvzf pandoc.tar.gz --strip-components 1 -C /usr/local
 
@@ -19,11 +24,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends asciidoctor fcg
 COPY --from=builder /var/www/htdocs/cgit /var/www/htdocs/cgit
 COPY --from=builder /usr/local/lib/cgit /usr/local/lib/cgit
 COPY --from=builder /usr/local/bin/pandoc /usr/local/bin/pandoc
-
-RUN mkdir -p /var/www/htdocs/cgit/_static
-RUN mv /var/www/htdocs/cgit/cgit.css /var/www/htdocs/cgit/_static/
-RUN mv /var/www/htdocs/cgit/cgit.js /var/www/htdocs/cgit/_static/
-RUN rm /var/www/htdocs/cgit/cgit.png
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cgitrc /etc/cgitrc
