@@ -16,6 +16,8 @@ except ClassNotFound:
     except ClassNotFound:
         lexer = TextLexer()
 
-formatter = HtmlFormatter(style="monokai", nobackground=True)
+formatter = HtmlFormatter(style="monokai", nowrap=True)
 
-print(highlight(source, lexer, formatter))
+print(
+    f'<span class="highlight" style="display: block;">{highlight(source, lexer, formatter)}</span>'
+)
