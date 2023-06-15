@@ -21,7 +21,7 @@ COPY Source_Code_Pro /var/www/htdocs/cgit/_static/Source_Code_Pro
 WORKDIR /
 COPY additional.css /additional.css
 RUN	cat additional.css >> /var/www/htdocs/cgit/_static/cgit.css && \
-	pygmentize -S monokai -f html -a .highlight >> /var/www/htdocs/cgit/_static/cgit.css
+	pygmentize -S monokai -f html -O nobackground -a .highlight >> /var/www/htdocs/cgit/_static/cgit.css
 
 RUN	wget -O pandoc.tar.gz https://github.com/jgm/pandoc/releases/download/3.1.3/pandoc-3.1.3-linux-amd64.tar.gz && \
 	tar xvzf pandoc.tar.gz --strip-components 1 -C /usr/local && \
