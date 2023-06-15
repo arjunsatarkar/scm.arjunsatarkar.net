@@ -1,12 +1,17 @@
 @font-face {
     font-family: "Source Code Pro";
-    src: url("/_static/Source_Code_Pro/SourceCodePro-VariableFont_wght.woff2") format("woff2-variations");
+    src: url("/_static/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf") format("truetype-variations");
     font-weight: 100 1000;
 }
 
 @font-face {
     font-family: "Source Code Pro";
-    src: url("/_static/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.woff2") format("woff2-variations");
+    src: url("/_static/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf") format("truetype-variations");
     font-style: italic;
     font-weight: 100 1000;
+}
+
+pre > code {
+	/* Rather than monospace, which overrides Source Code Pro. */
+	font-family: inherit;
 }
