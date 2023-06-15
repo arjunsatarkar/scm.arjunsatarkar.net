@@ -31,14 +31,11 @@ RUN	apt-get update && \
 	apt-get install -y --no-install-recommends asciidoctor fcgiwrap openssl pandoc python3 python3-pygments zlib1g && \
 	rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /var/www/htdocs/cgit /var/www/htdocs/cgit
 COPY --from=builder /usr/local/lib/cgit /usr/local/lib/cgit
+COPY --from=builder /var/www/htdocs/cgit /var/www/htdocs/cgit
 
-COPY nginx.conf /etc/nginx/
 COPY cgitrc /etc/
-COPY about_filter.py /
-COPY source_filter.py /
-COPY head.html /
-COPY entrypoint.sh /
+COPY nginx.conf /etc/nginx/
+COPY about_filter.py entrypoint.sh head.html source_filter.py /
 
 ENTRYPOINT ["/entrypoint.sh"]
