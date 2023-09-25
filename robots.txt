@@ -1,0 +1,10 @@
+User-Agent: *
+Allow: /*/commit/?id=
+Disallow: /*/commit$
+Disallow: /*/commit/
+Disallow: /*/log$
+Disallow: /*/log/
+Disallow: /*/patch$
+DIsallow: /*/patch/
+Disallow: /*/diff$
+Disallow: /*/diff/

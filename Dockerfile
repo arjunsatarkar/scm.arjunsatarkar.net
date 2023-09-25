@@ -17,6 +17,7 @@ WORKDIR /var/www/htdocs/cgit
 RUN mkdir _static
 RUN mv cgit.css cgit.js _static/
 RUN rm cgit.png favicon.ico
+COPY robots.txt .
 COPY logo.svg _static/
 COPY Source_Code_Pro/SourceCodePro*VariableFont_wght.ttf _static/Source_Code_Pro/
 COPY additional.css /tmp/
